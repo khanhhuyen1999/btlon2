@@ -17,6 +17,7 @@ import { GioithieuComponent } from './gioithieu/gioithieu.component';
 import { DangnhapComponent } from './dangnhap/dangnhap.component';
 import { ThanhtoanComponent } from './thanhtoan/thanhtoan.component';
 import { GiohangComponent } from './giohang/giohang.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { GiohangComponent } from './giohang/giohang.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    HttpClientModule,
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
