@@ -65,7 +65,7 @@
                             <li><a href="index.html" class="active">Trang chủ</a></li>
                             <li class="dropdown"><a href="#">Danh mục<i class="fa fa-angle-down"></i></a>
                                 <ul role="menu" class="sub-menu">
-                                    <li *ngFor="let menu of list_lsp"><a routerLink="/list-item">{{menu.tenLoaiSp}}</a></li>
+                                    <li *ngFor="let menu of list_lsp"><a href="{{'/list-item/' + menu.maLoaiSp}}">{{menu.tenLoaiSp}}</a></li>
                                 </ul>
                             </li> 
                             <li><a routerLink="/lienhe">Liên Hệ</a></li>

@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { SanPhamService } from 'src/app/_services/sanpham.service';
+
 
 @Component({
   selector: 'app-detail',
@@ -6,10 +9,25 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./detail.component.css']
 })
 export class DetailComponent implements OnInit {
-
-  constructor() { }
+  id:number;
+  sanpham: any;
+  
+  constructor(
+    private route: ActivatedRoute,
+    private sanphamService: SanPhamService
+  ) { }
 
   ngOnInit(): void {
+    document.body.scrollTop = 0;
+    
+    this.id = this.route.snapshot.params['id'];
+    if(this.id) {
+      this.sanphamService.getTheoId(this.id).toPromise()
+      .then(res => {
+        this.sanpham = res;
+      })
+      .catch(err => console.error(err));
+    }
   }
 
 }

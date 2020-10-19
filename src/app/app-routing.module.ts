@@ -11,8 +11,8 @@ import { ThanhtoanComponent } from './thanhtoan/thanhtoan.component';
 import { GiohangComponent } from './giohang/giohang.component';
 const routes: Routes = [
     { path: '',component: HomeComponent },
-     {path: 'list-item', component: ListItemComponent},
-     {path: 'detail', component: DetailComponent},
+     {path: 'list-item/:id', component: ListItemComponent},
+     {path: 'detail/:id', component: DetailComponent},
      { path: 'lienhe',component: LienheComponent },
      { path: 'gioithieu',component: GioithieuComponent },
      { path: 'dangnhap',component: DangnhapComponent },
