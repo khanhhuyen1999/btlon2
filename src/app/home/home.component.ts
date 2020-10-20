@@ -13,8 +13,6 @@ export class HomeComponent implements OnInit {
   list3 = [];
   list4 = [];
   list5 = [];
-  form: any;
-  router: any;
 
   constructor(private SanPhamService:SanPhamService) { }
 
@@ -44,11 +42,5 @@ export class HomeComponent implements OnInit {
       console.log(data)
     });
   }
-  onSubmit() {
-    if (this.form.invalid) {
-      return;
-    }
-    this.router.navigate(['/danh-muc'], { queryParams: { id: this.form.value.type, key: this.form.value.key_name } });
-  }
-
+ 
 }

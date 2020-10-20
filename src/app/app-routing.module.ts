@@ -9,9 +9,11 @@ import { GioithieuComponent } from './gioithieu/gioithieu.component';
 import { DangnhapComponent } from './dangnhap/dangnhap.component';
 import { ThanhtoanComponent } from './thanhtoan/thanhtoan.component';
 import { GiohangComponent } from './giohang/giohang.component';
+import { SearchComponent } from './search/search.component';
 const routes: Routes = [
     { path: '',component: HomeComponent },
-     {path: 'list-item/:id', component: ListItemComponent},
+    {path: 'list-item/:id', component: ListItemComponent},
+    {path: 'tim-kiem', component: SearchComponent},
      {path: 'detail/:id', component: DetailComponent},
      { path: 'lienhe',component: LienheComponent },
      { path: 'gioithieu',component: GioithieuComponent },
@@ -26,6 +28,7 @@ const routes: Routes = [
      {path: 'dangnhap', loadChildren:() => import ('./dangnhap/dangnhap.module' ).then(m => m.DangnhapModule)  },
      {path: 'thanhtoan', loadChildren:() => import ('./thanhtoan/thanhtoan.module' ).then(m => m.ThanhtoanModule)  },
      {path: 'giohang', loadChildren:() => import ('./giohang/giohang.module' ).then(m => m.GiohangModule)  },
+     {path: 'search', loadChildren:() => import ('./search/search.module' ).then(m => m.SearchModule)  },
      {path: '**', component: NotFoundComponent},
 ];
 

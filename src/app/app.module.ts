@@ -26,7 +26,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     HomeComponent,
     FooterComponent,
     HeaderComponent,
-    //SearchComponent,
+    SearchComponent,
     ProductComponent,
     //SlideComponent,
     ListItemComponent,
