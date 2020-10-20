@@ -18,6 +18,7 @@ import { DangnhapComponent } from './dangnhap/dangnhap.component';
 import { ThanhtoanComponent } from './thanhtoan/thanhtoan.component';
 import { GiohangComponent } from './giohang/giohang.component';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,8 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     BrowserModule,
     HttpClientModule,
+    ReactiveFormsModule,
+    FormsModule,
     AppRoutingModule,
   ],
   providers: [],

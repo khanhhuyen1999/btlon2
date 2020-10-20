@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from '../../environments/environment';
 
@@ -26,5 +26,20 @@ export class SanPhamService {
     getTheoId(id) {
         return this._http
             .get<any>(baseUrl + id, { headers: environment.headerOptions });
+    }
+    getTheoLoaiTop4(idloai) {
+        return this._http
+            .get<any>(baseUrl + "get-loai-top4/" + idloai, { headers: environment.headerOptions });
+    }
+    getTheoLoaiTop6(idloai) {
+        return this._http
+            .get<any>(baseUrl + "get-loai-top6/" + idloai, { headers: environment.headerOptions });
+    }
+    getTimLoai(id, key) {
+        let params = new HttpParams()
+        .set("id", id)
+        .set("key", key);
+        return this._http
+            .get<any>(baseUrl + "tim-loai", { params: params });
     }
 }

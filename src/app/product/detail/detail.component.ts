@@ -11,6 +11,7 @@ import { SanPhamService } from 'src/app/_services/sanpham.service';
 export class DetailComponent implements OnInit {
   id:number;
   sanpham: any;
+  sanphams: any;
   
   constructor(
     private route: ActivatedRoute,
@@ -25,6 +26,11 @@ export class DetailComponent implements OnInit {
       this.sanphamService.getTheoId(this.id).toPromise()
       .then(res => {
         this.sanpham = res;
+        this.sanphamService.getTheoLoaiTop6(this.sanpham.maLoai).toPromise()
+        .then(res => {
+          this.sanphams = res;
+        })
+        .catch(err => console.error(err));
       })
       .catch(err => console.error(err));
     }

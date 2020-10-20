@@ -19,5 +19,10 @@ export class HeaderComponent implements OnInit {
       this.list_lsp = res;
     })
   }
-
+  onSubmit() {
+    if (this.form.invalid) {
+      return;
+    }
+    this.router.navigate(['/danh-muc'], { queryParams: { id: this.form.value.type, key: this.form.value.key_name } });
+  }
 }
