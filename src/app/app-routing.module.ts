@@ -21,14 +21,12 @@ const routes: Routes = [
      { path: 'thanhtoan',component: ThanhtoanComponent },
      { path: 'giohang',component: GiohangComponent },
      {path: '', loadChildren:() => import('./home/home.module').then(m => m.HomeModule)  },
-     {path: 'search', loadChildren:() => import('./search/search.module').then(m => m.SearchModule)  },
      {path: 'product', loadChildren:() => import('./product/product.module').then(m => m.ProductModule)  },
      {path: 'lienhe', loadChildren:() => import ('./lienhe/lienhe.module' ).then(m => m.LienheModule)  },
      {path: 'gioithieu', loadChildren:() => import ('./gioithieu/gioithieu.module' ).then(m => m.GioithieuModule)  },
      {path: 'dangnhap', loadChildren:() => import ('./dangnhap/dangnhap.module' ).then(m => m.DangnhapModule)  },
      {path: 'thanhtoan', loadChildren:() => import ('./thanhtoan/thanhtoan.module' ).then(m => m.ThanhtoanModule)  },
      {path: 'giohang', loadChildren:() => import ('./giohang/giohang.module' ).then(m => m.GiohangModule)  },
-     {path: 'search', loadChildren:() => import ('./search/search.module' ).then(m => m.SearchModule)  },
      {path: '**', component: NotFoundComponent},
 ];
 

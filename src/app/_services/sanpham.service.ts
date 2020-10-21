@@ -35,11 +35,11 @@ export class SanPhamService {
         return this._http
             .get<any>(baseUrl + "get-loai-top6/" + idloai, { headers: environment.headerOptions });
     }
-    getTimLoai(id, key) {
+
+    getTimKiem(key) {
         let params = new HttpParams()
-        .set("id", id)
         .set("key", key);
         return this._http
-            .get<any>(baseUrl + "tim-loai", { params: params });
+            .get<any>(baseUrl + "tim-kiem", { params: params });
     }
 }
