@@ -107,7 +107,6 @@
 						
 						<div class="price-range"><!--price-range-->
 							<h2>Phạm vi giá</h2>
-							<h2>Phạm vi giá</h2>
 							<div class="brands-name">
 								<ul class="nav nav-pills nav-stacked">
 									<li><a href="#"> <span class="pull-right">>1000</span>Gia Đình</a></li>
@@ -128,7 +127,7 @@
 					<div class="product-details"><!--product-details-->
 						<div class="col-sm-5">
 							<div class="view-product">
-								<img src="assets/images/home/{{sanpham.anh}}" alt="" />
+								<img src="{{sanpham.anh | getImage:1}}" alt="" />
 								<h3>ZOOM</h3>
 							</div>
 						</div>
@@ -342,7 +341,7 @@
 							<div class="product-image-wrapper" [routerLink]="['/detail', item.maSp]">
 								<div class="single-products">
 										<div class="productinfo text-center">
-											<img src="assets/images/home/{{item.anh}}" alt="" />
+											<img src="{{item.anh | getImage:1}}" alt="" />
 											<h2>{{item.gia}}</h2>
 											<p>{{item.tenSp}}</p>
 											<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Thêm vào giỏ hàng</a>

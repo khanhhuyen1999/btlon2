@@ -8,6 +8,7 @@ export const environment = {
   production: false,
   
   apiUrl: 'http://localhost:51808/api/',
+  imageUrl: 'http://localhost:51808/Uploads/images/',
   headerOptions: new HttpHeaders({
       'Content-Type': 'application/json'
   })

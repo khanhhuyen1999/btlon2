@@ -4,6 +4,7 @@ import {DetailComponent} from './detail/detail.component';
 import {ListItemComponent} from './list-item/list-item.component';
 import {CartComponent} from './Cart/cart.component';
 import { RouterModule, Routes } from '@angular/router';
+import { SharedModule } from '../shared/shared.module';
 
 
 
@@ -17,6 +18,7 @@ const routes: Routes = [
   declarations: [],
   imports: [
     CommonModule,
+    SharedModule,
     RouterModule.forRoot(routes)
   ]
 })
