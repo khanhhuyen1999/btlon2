@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CartService } from '../_services/cart.service';
 import { SanPhamService } from "../_services/sanpham.service";
 
 @Component({
@@ -14,33 +15,36 @@ export class HomeComponent implements OnInit {
   list4 = [];
   list5 = [];
 
-  constructor(private SanPhamService:SanPhamService) { }
+  constructor(
+    private SanPhamService:SanPhamService,
+    private cartService: CartService
+  ) { }
 
   ngOnInit(): void {
     this.SanPhamService.getAll().subscribe(data => {
       this.list = data;
-      console.log(data)
     });
     this.SanPhamService.getTheoLoaiTop4(1).subscribe(data => {
       this.list1 = data;
-      console.log(data)
     });
     this.SanPhamService.getTheoLoaiTop4(2).subscribe(data => {
       this.list2 = data;
-      console.log(data)
     });
     this.SanPhamService.getTheoLoaiTop4(3).subscribe(data => {
       this.list3 = data;
-      console.log(data)
     });
     this.SanPhamService.getTheoLoaiTop4(4).subscribe(data => {
       this.list4 = data;
-      console.log(data)
     });
     this.SanPhamService.getTheoLoaiTop4(5).subscribe(data => {
       this.list5 = data;
-      console.log(data)
     });
+  }
+
+  themVaoGio(event, sanpham) {
+    this.cartService.themVaoGio(sanpham.maSp);
+    event.preventDefault();
+    event.stopPropagation();
   }
  
 }
