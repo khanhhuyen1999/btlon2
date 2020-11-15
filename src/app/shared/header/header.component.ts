@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { LoaiSpService } from 'src/app/_services/loaisp.service';
+import { UserService } from 'src/app/_services/user.service';
 
 @Component({
   selector: 'app-header',
@@ -15,8 +16,13 @@ export class HeaderComponent implements OnInit {
   constructor(
     private loaiSpService: LoaiSpService,
     private router: Router,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private userService: UserService,
   ) { }
+
+  get user() {
+    return this.userService.userValue;
+  }
 
   ngOnInit(): void {
     this.loaiSpService.getAll().toPromise()
@@ -34,6 +40,10 @@ export class HeaderComponent implements OnInit {
       return;
     }
     this.router.navigate(['/tim-kiem'], { queryParams: { key: this.form.value.key_name } });
+  }
+
+  dangXuat() {
+    this.userService.logout();
   }
 
 }

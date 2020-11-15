@@ -68,4 +68,9 @@ export class CartService {
     luuGioHang() {
         localStorage.setItem('cart', JSON.stringify(this.cart));
     }
+
+    thanhToan(data) {
+        return this._http
+            .post(baseUrl, data, { headers: environment.headerOptions });
+    }
 }

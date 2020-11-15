@@ -40,7 +40,8 @@
                         <ul class="nav navbar-nav">
                             <li><a routerLink="/thanhtoan"><i class="fa fa-crosshairs"></i> Thanh Toán</a></li>
                             <li><a routerLink="/giohang"><i class="fa fa-shopping-cart"></i> Giỏ hàng</a></li>
-                            <li><a routerLink="/dangnhap"> Đăng nhập</a></li>
+                            <li *ngIf="!user"><a routerLink="/dangnhap"> Đăng nhập</a></li>
+                            <li *ngIf="user"><a (click)="dangXuat()"> {{user.tenKh}}</a></li>
                         </ul>
                     </div>
                 </div>

@@ -4,9 +4,9 @@
             <div class="col-sm-4 col-sm-offset-1">
                 <div class="login-form"><!--login form-->
                     <h2>Đăng nhập vào tài khoản của bạn</h2>
-                    <form action="#">
-                        <input type="text" placeholder="Name" />
-                        <input type="email" placeholder="Email Address" />
+                    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+                        <input type="text" formControlName="taiKhoan" placeholder="Tài khoản" />
+                        <input type="password" formControlName="matKhau" placeholder="Mật khẩu" />
                         <span>
                             <input type="checkbox" class="checkbox"> 
                           Giữ  cho tôi đăng nhập 

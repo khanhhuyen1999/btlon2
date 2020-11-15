@@ -17,11 +17,13 @@ import { GioithieuComponent } from './gioithieu/gioithieu.component';
 import { DangnhapComponent } from './dangnhap/dangnhap.component';
 import { ThanhtoanComponent } from './thanhtoan/thanhtoan.component';
 import { GiohangComponent } from './giohang/giohang.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SharedModule } from './shared/shared.module';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { JwtInterceptor } from './_lib/jwt.interceptor';
+import { ErrorInterceptor } from './_lib/error.interceptor';
 
 @NgModule({
   declarations: [
@@ -49,7 +51,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     SharedModule,
     AppRoutingModule,
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

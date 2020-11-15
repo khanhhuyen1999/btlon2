@@ -7,218 +7,62 @@
             </ol>
         </div><!--/breadcrums-->
 
-        <div class="step-one">
-            <h2 class="heading">Bước 1</h2>
-        </div>
-        <div class="checkout-options">
-            <h3>Người Dùng Mới</h3>
-            <p>Tùy Chọn Thanh Toán</p>
-            <ul class="nav">
-                <li>
-                    <label><input type="checkbox"> Đăng Ký Tài Khoản</label>
-                </li>
-                <li>
-                    <label><input type="checkbox"> Thanh Toán Của Khách</label>
-                </li>
-                <li>
-                    <a href=""><i class="fa fa-times"></i>Hủy Bỏ</a>
-                </li>
-            </ul>
-        </div><!--/checkout-options-->
-
-        <div class="register-req">
-            <p>Vui lòng sử dụng Đăng ký và Thanh toán để dễ dàng truy cập vào lịch sử đơn đặt hàng của bạn hoặc sử dụng Thanh toán với tư cách Khách</p>
-        </div><!--/register-req-->
-
         <div class="shopper-informations">
-            <div class="row">
-                <div class="col-sm-4">
-                    <div class="shopper-info">
-                        <p>Thông tin người mua hàng</p>
-                        <form>
-                        <input type="ten" placeholder="Tên KH"/>
-                        <input type="taikhoan" placeholder="Tài khoản"/>
-                        <input type="password" placeholder="Password"/>
-                        <input type="email" placeholder="Email"/>
-                        <input type="Sdt" placeholder="Số điện thoại"/>
-                        <input type="diachi" placeholder="Địa chỉ"/>
-                        </form>
-                        <a class="btn btn-primary" href="">Lấy một lời trích dẫn</a>
-                        <a class="btn btn-primary" href="">Tiếp tục</a>
-                    </div>
-                </div>
-                <div class="col-sm-4 clearfix">
-                    <div class="bill-to">
-                        <div class="form-two">
-                            <form>
-                                <input type="text" placeholder="Zip / Postal Code *">
-                                <select>
-                                    <option>-- Tỉnh --</option>
-                                    <option>Hưng Yên</option>
-                                    <option>Hà Nội</option>
-                                    <option>Thái Bình</option>
-                                    <option>Hải Dương</option>
-                                    <option>Hải Phòng</option>
-                                    <option>Nam Định</option>
-                                    <option>TP Hồ Chí Minh</option>
-                                    <option>Đà Nẵng</option>
-                                </select>
-                                <select>
-                                    <option>--  Khu Vực/Huyện --</option>
-                                    <option>Yên Mỹ</option>
-                                    <option>Hà Nội</option>
-                                    <option>Nam Định</option>
-                                    <option>Thái Bình</option>
-                                    <option>TP Hồ Chí Minh</option>
-                                    <option>Đà Nẵng</option>
-                                    <option>Hải Phòng</option>
-                                    <option>Hải Dương</option>
-                                </select>
-                                <input type="password" placeholder="Xác nhận mật khẩu">
-                                <input type="text" placeholder="Phone *">
-                                <input type="text" placeholder="Mobile Phone">
-                                <input type="text" placeholder="Fax">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="shopper-info">
+                            <form [formGroup]="form" (ngSubmit)="onSubmit()">
+                                <p>Thông tin người mua hàng</p>
+                                <input type="text" placeholder="Tên KH" formControlName="TenKh"/>
+                                <input type="email" placeholder="Email" formControlName="Email"/>
+                                <input type="text" placeholder="Số điện thoại" formControlName="SDT"/>
+                                <input type="text" placeholder="Địa chỉ" formControlName="DiaChi"/>
+                                <button type="submit" class="btn btn-primary" href="">Tiếp tục</button>
                             </form>
                         </div>
                     </div>
+                    <!-- <div class="col-sm-4 clearfix">
+                        <div class="bill-to">
+                            <div class="form-two">
+                                <form>
+                                    <input type="text" placeholder="Zip / Postal Code *">
+                                    <select>
+                                        <option>-- Tỉnh --</option>
+                                        <option>Hưng Yên</option>
+                                        <option>Hà Nội</option>
+                                        <option>Thái Bình</option>
+                                        <option>Hải Dương</option>
+                                        <option>Hải Phòng</option>
+                                        <option>Nam Định</option>
+                                        <option>TP Hồ Chí Minh</option>
+                                        <option>Đà Nẵng</option>
+                                    </select>
+                                    <select>
+                                        <option>--  Khu Vực/Huyện --</option>
+                                        <option>Yên Mỹ</option>
+                                        <option>Hà Nội</option>
+                                        <option>Nam Định</option>
+                                        <option>Thái Bình</option>
+                                        <option>TP Hồ Chí Minh</option>
+                                        <option>Đà Nẵng</option>
+                                        <option>Hải Phòng</option>
+                                        <option>Hải Dương</option>
+                                    </select>
+                                    <input type="password" placeholder="Xác nhận mật khẩu">
+                                    <input type="text" placeholder="Phone *">
+                                    <input type="text" placeholder="Mobile Phone">
+                                    <input type="text" placeholder="Fax">
+                                </form>
+                            </div>
+                        </div>
+                    </div> -->
+                    <div class="col-sm-4">
+                        <div class="order-message">
+                            <p>Để Vận Chuyển</p>
+                            <textarea  placeholder="Ghi chú về đơn đặt hàng của bạn, Ghi chú đặc biệt khi giao hàng" rows="16"></textarea>
+                        </div>	
+                    </div>					
                 </div>
-                <div class="col-sm-4">
-                    <div class="order-message">
-                        <p>Để Vận Chuyển</p>
-                        <textarea name="thông điệp"  placeholder="Ghi chú về đơn đặt hàng của bạn, Ghi chú đặc biệt khi giao hàng" rows="16"></textarea>
-                        <label><input type="checkbox"> Vận chuyển đến địa chỉ thanh toán</label>
-                    </div>	
-                </div>					
-            </div>
         </div>
-        <div class="review-payment">
-            <h2>Xem lại & Thanh toán</h2>
-        </div>
-
-        <div class="table-responsive cart_info">
-            <table class="table table-condensed">
-                <thead>
-                    <tr class="cart_menu">
-                        <td class="code">Mã</td>
-                        <td class="name">Tên</td>
-                        <td class="description">Mô tả</td>
-                        <td class="species">Loại</td>
-                        <td class="image">Ảnh</td>                   
-                        <td class="quantity">Số Lượng</td>
-                        <td class="price">Giá bán</td>               
-                        <td></td>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td class="cart_product">
-                            <a href=""><img src="images/cart/one.png" alt=""></a>
-                        </td>
-                        <td class="cart_description">
-                            <h4><a href="">Hà Nội</a></h4>
-                            <p>Web ID: 1089772</p>
-                        </td>
-                        <td class="cart_price">
-                            <p>$59</p>
-                        </td>
-                        <td class="cart_quantity">
-                            <div class="cart_quantity_button">
-                                <a class="cart_quantity_up" href=""> + </a>
-                                <input class="cart_quantity_input" type="text" name="quantity" value="1" autocomplete="off" size="2">
-                                <a class="cart_quantity_down" href=""> - </a>
-                            </div>
-                        </td>
-                        <td class="cart_total">
-                            <p class="cart_total_price">$59</p>
-                        </td>
-                        <td class="cart_delete">
-                            <a class="cart_quantity_delete" href=""><i class="fa fa-times"></i></a>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td class="cart_product">
-                            <a href=""><img src="images/cart/two.png" alt=""></a>
-                        </td>
-                        <td class="cart_description">
-                            <h4><a href="">Hà Nội</a></h4>
-                            <p>Web ID: 1089772</p>
-                        </td>
-                        <td class="cart_price">
-                            <p>$59</p>
-                        </td>
-                        <td class="cart_quantity">
-                            <div class="cart_quantity_button">
-                                <a class="cart_quantity_up" href=""> + </a>
-                                <input class="cart_quantity_input" type="text" name="quantity" value="1" autocomplete="off" size="2">
-                                <a class="cart_quantity_down" href=""> - </a>
-                            </div>
-                        </td>
-                        <td class="cart_total">
-                            <p class="cart_total_price">$59</p>
-                        </td>
-                        <td class="cart_delete">
-                            <a class="cart_quantity_delete" href=""><i class="fa fa-times"></i></a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="cart_product">
-                            <a href=""><img src="images/cart/three.png" alt=""></a>
-                        </td>
-                        <td class="cart_description">
-                            <h4><a href="">Hà Nội</a></h4>
-                            <p>Web ID: 1089772</p>
-                        </td>
-                        <td class="cart_price">
-                            <p>$59</p>
-                        </td>
-                        <td class="cart_quantity">
-                            <div class="cart_quantity_button">
-                                <a class="cart_quantity_up" href=""> + </a>
-                                <input class="cart_quantity_input" type="text" name="quantity" value="1" autocomplete="off" size="2">
-                                <a class="cart_quantity_down" href=""> - </a>
-                            </div>
-                        </td>
-                        <td class="cart_total">
-                            <p class="cart_total_price">$59</p>
-                        </td>
-                        <td class="cart_delete">
-                            <a class="cart_quantity_delete" href=""><i class="fa fa-times"></i></a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td colspan="4">&nbsp;</td>
-                        <td colspan="2">
-                            <table class="table table-condensed total-result">
-                                <tr>
-                                    <td>Tổng số giỏ hàng phụ</td>
-                                    <td>$59</td>
-                                </tr>
-                               
-                                <tr class="shipping-cost">
-                                    <td>Phí ship</td>
-                                    <td>Free</td>										
-                                </tr>
-                                <tr>
-                                    <td>Toàn bộ</td>
-                                    <td><span>$61</span></td>
-                                </tr>
-                            </table>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-        <div class="payment-options">
-                <span>
-                    <label><input type="checkbox"> Chuyển khoản trực tiếp</label>
-                </span>
-                <span>
-                    <label><input type="checkbox"> Kiểm tra thanh toán</label>
-                </span>
-                <span>
-                    <label><input type="checkbox"> Paypal</label>
-                </span>
-            </div>
     </div>
 </section> <!--/#cart_items-->
